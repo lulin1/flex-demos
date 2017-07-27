@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <h2>容器的属性</h2>
+    <h2>一、容器的属性</h2>
     <div class="container-property">
       <h3>1. flex-direction属性</h3>
       <p class="description">flex-direction属性决定主轴的方向（即项目的排列方向）。</p>
@@ -299,6 +299,204 @@
         <div class="item align-content-item">9</div>
         <div class="item align-content-item">10</div>
       </div>
+    </div>
+
+    <h2>二、项目的属性</h2>
+    <div class="project-property">
+      <h3>1. order属性</h3>
+      <p class="description">order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
+      <p class="code">
+        .item {
+           order: integer;
+        }
+      </p>
+      <p class="code-demo">(1) order -- row</p>
+      <div class="order-row flex-box">
+        <div class="item order--1">order:-1</div>
+        <div class="item order-0">order:0</div>
+        <div class="item order-1">order:1</div>
+        <div class="item order-4">order:4</div>
+        <div class="item order-3">order:3</div>
+        <div class="item order-2">order:2</div>
+      </div>
+      <p class="code-demo">(2) order -- column</p>
+      <div class="order-column flex-box">
+        <div class="item order--1">order:-1</div>
+        <div class="item order-0">order:0</div>
+        <div class="item order-1">order:1</div>
+        <div class="item order-4">order:4</div>
+        <div class="item order-3">order:3</div>
+        <div class="item order-2">order:2</div>
+      </div>
+
+      <h3>2. flex-grow属性</h3>
+      <p class="description">flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p>
+      <p class="description">如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+      <p class="code">
+        .item {
+           flex-grow: number;
+        }
+      </p>
+      <p class="code-demo">(1) flex-grow : 0 0 0</p>
+      <div class="flex-grow flex-box">
+        <div class="item-no-margin-left flex-grow-item-0">0</div>
+        <div class="item flex-grow-item-0">0</div>
+        <div class="item flex-grow-item-0">0</div>
+      </div>
+      <p class="code-demo">(2) flex-grow : 1 1 1</p>
+      <div class="flex-grow flex-box">
+        <div class="item-no-margin-left flex-grow-item-1">1</div>
+        <div class="item flex-grow-item-1">1</div>
+        <div class="item flex-grow-item-1">1</div>
+      </div>
+      <p class="code-demo">(3) flex-grow : 1 2 1</p>
+      <div class="flex-grow flex-box">
+        <div class="item-no-margin-left flex-grow-item-1">1</div>
+        <div class="item flex-grow-item-2">2</div>
+        <div class="item flex-grow-item-1">1</div>
+      </div>
+
+      <h3>3. flex-shrink属性</h3>
+      <p class="description">flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+      <p class="description">如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
+      <p class="code">
+        .item {
+           flex-shrink: number; // 0 or 1
+        }
+      </p>
+      <p class="code-demo">(1) flex-shrink : 0 0 0</p>
+      <div class="flex-shrink flex-box">
+        <div class="item-no-margin-left flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-0">0</div>
+      </div>
+      <p class="code-demo">(2) flex-shrink : 1 0 1 0 1 0 1 0 1</p>
+      <div class="flex-shrink flex-box">
+        <div class="item-no-margin-left flex-shrink-item-1">1</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-1">1</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-1">1</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-1">1</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-1">1</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-1">1</div>
+        <div class="item flex-shrink-item-0">0</div>
+        <div class="item flex-shrink-item-1">1</div>
+      </div>
+
+      <h3>4. flex-basis属性</h3>
+      <p class="description">flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
+      <p class="description">它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</p>
+      <p class="code">
+        .item {
+            flex-basis: length | auto; 
+        }
+      </p>
+      <p class="code-demo">(1) flex-basis : auto</p>
+      <div class="flex-basis flex-box">
+        <div class="item-no-margin-left flex-basis-item-auto">auto</div>
+        <div class="item flex-basis-item-auto">auto</div>
+        <div class="item flex-basis-item-auto">auto</div>
+        <div class="item flex-basis-item-auto">auto</div>
+        <div class="item flex-basis-item-auto">auto</div>
+        <div class="item flex-basis-item-auto">auto</div>
+      </div>
+      <p class="code-demo">(2) flex-basis : length</p>
+      <div class="flex-basis flex-box">
+        <div class="item-no-margin-left flex-basis-item-length-150">150</div>
+        <div class="item flex-basis-item-length-80">80</div>
+        <div class="item flex-basis-item-length-30">30</div>
+        <div class="item flex-basis-item-length-200">200</div>
+        <div class="item flex-basis-item-length-130">130</div>
+      </div>
+
+      <h3>5. flex属性</h3>
+      <p class="description">flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
+      <p class="description">该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
+建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+      <p class="code">
+        .item {
+            flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+        }
+      </p>
+      <p class="code-demo">(1) flex : 0 1 auto</p>
+      <div class="flex flex-box">
+        <div class="item-no-margin-left flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+      </div>
+      <br/>
+      <div class="flex flex-box">
+        <div class="item-no-margin-left flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+        <div class="item flex-item-0-1-auto">0 1</div>
+      </div>
+
+      <p class="code-demo">(2) flex : auto</p>
+      <div class="flex flex-box">
+        <div class="item-no-margin-left flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+      </div>
+      <br/>
+      <div class="flex flex-box">
+        <div class="item-no-margin-left flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+        <div class="item flex-item-auto">auto</div>
+      </div>
+
+      <p class="code-demo">(3) flex : none</p>
+      <div class="flex flex-box">
+        <div class="item-no-margin-left flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+      </div>
+      <br/>
+      <div class="flex flex-box">
+        <div class="item-no-margin-left flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+        <div class="item flex-item-none">none</div>
+      </div>
+
+      <h3>6. align-self属性</h3>
+      <p class="description">flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
+      <p class="description">该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
+建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+      <p class="code">
+        .item {
+            flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+        }
+      </p>
     </div>
   </body>
 </html>
