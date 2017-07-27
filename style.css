@@ -379,3 +379,22 @@ h3 {
 .flex-item-none {
 	flex: none;
 }
+
+.align-self {
+	display: flex;
+	align-items: flex-start;
+	width: 50%;
+	height: 200px;
+}
+
+.align-self-item-auto {
+	align-self: auto;
+}
+
+.align-self-item-center {
+	align-self: center;
+}
+
+.align-self-item-end {
+	align-self: flex-end;
+}

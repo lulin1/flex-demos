@@ -489,14 +489,18 @@
       </div>
 
       <h3>6. align-self属性</h3>
-      <p class="description">flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
-      <p class="description">该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
-建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+      <p class="description">align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
       <p class="code">
         .item {
-            flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+            align-self: auto | flex-start | flex-end | center | baseline | stretch;
         }
       </p>
+      <p class="code-demo">(1) align-self: auto center end;</p>
+      <div class="align-self flex-box">
+        <div class="item-no-margin-left align-self-item-auto">auto</div>
+        <div class="item align-self-item-center">center</div>
+        <div class="item align-self-item-end">end</div>
+      </div>
     </div>
   </body>
 </html>
