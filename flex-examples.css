@@ -130,7 +130,7 @@ h3 {
 	display: flex;
 }
 
-.pip-7-2 {
+.pip-second-7-2 {
 	display: flex;
 	align-self: center;
 }
@@ -140,6 +140,79 @@ h3 {
 	justify-content: space-between;
 }
 
-.pip-8-2 {
+.pip-second-8-2 {
 	align-self: flex-end;
+}
+
+.second-face-9 {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+}
+
+.pip-second-9-2 {
+	align-self: flex-end;
+}
+
+.third-face-1 {
+	display: flex;
+}
+
+.pip-third-1-2 {
+	align-self: center;
+}
+
+.pip-third-1-3 {
+	align-self: flex-end;
+}
+
+.third-face-2 {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.pip-third-2-2 {
+	align-self: center;
+}
+
+.pip-third-2-3 {
+	align-self: flex-end;
+}
+
+.third-face-3 {
+	display: flex;
+	flex-direction: column;
+}
+
+.pip-third-3-2 {
+	align-self: center;
+}
+
+.third-face-4 {
+	display: flex;
+	flex-direction: column;
+}
+
+.pip-third-4-3 {
+	align-self: center;
+}
+
+.third-face-5 {
+	display: flex;
+}
+
+.third-face-6 {
+	display: flex;
+}
+
+.pip-third-6-2 {
+	align-self: center;
+}
+
+.third-face-7 {
+	display: flex;
+}
+
+.pip-third-7-3 {
+	align-self: center;
 }
