@@ -33,8 +33,8 @@ h3 {
 }
 
 .pip {
-	width: 30px;
-	height: 30px;
+	width: 33px;
+	height: 33px;
 	background-color: #fff;
 	border-radius: 50%;
 }
@@ -215,4 +215,63 @@ h3 {
 
 .pip-third-7-3 {
 	align-self: center;
+}
+
+.fourth-face-1 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-content: space-between;
+}
+
+.fourth-face-2 {
+	display: flex;
+	align-content: space-between;
+	flex-wrap: wrap;
+}
+
+.fourth-column {
+	display: flex;
+	justify-content: space-between;
+	flex-basis: 100%;
+}
+
+.six-face-1 {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+}
+
+.six-face-2 {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-content: space-between;
+}
+
+.six-face-3 {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.six-row-3-1 {
+	display: flex;
+	flex-basis: 100%;
+}
+
+.six-row-3-2 {
+	display: flex;
+	flex-basis: 100%;
+	justify-content: center;
+}
+
+.six-row-3-3 {
+	display: flex;
+	flex-basis: 100%;
+	justify-content: space-between;
+}
+
+.nine-face-1 {
+	display: flex;
+	flex-wrap: wrap;
 }
